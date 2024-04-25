@@ -10,7 +10,7 @@ on:
 
 env:
   PROJECT_ID: interns-melinda
-  IMAGE: europe-central2-docker.pkg.dev/interns-melinda/cloud-run-source-deploy/my-app
+  IMAGE: europe-central2-docker.pkg.dev/interns-melinda/cloud-run-source-deploy/my-app2
   REGION: europe-central2
   SERVICE_NAME: userapi
 

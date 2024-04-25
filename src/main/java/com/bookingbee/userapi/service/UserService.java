@@ -2,12 +2,10 @@ package com.bookingbee.userapi.service;
 
 import com.bookingbee.userapi.model.User;
 import com.google.api.core.ApiFuture;
-import com.google.cloud.NoCredentials;
 import com.google.cloud.firestore.*;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.auth.FirebaseToken;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,8 +13,6 @@ import java.util.concurrent.ExecutionException;
 
 @Service
 public class UserService {
-
-    private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
 
     FirestoreOptions firestoreOptions =
@@ -59,7 +55,7 @@ public class UserService {
             }
         } catch (FirebaseAuthException | InterruptedException e) {
             e.printStackTrace();
-            return null; // or throw an exception
+            return null;
         } catch (ExecutionException e) {
             throw new RuntimeException(e);
         }
