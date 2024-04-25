@@ -12,7 +12,7 @@ env:
   PROJECT_ID: interns-melinda
   IMAGE: europe-central2-docker.pkg.dev/interns-melinda/cloud-run-source-deploy/my-app
   REGION: europe-central2
-  SERVICE_NAME: bookingapi
+  SERVICE_NAME: userapi
 
 
 jobs:
@@ -29,7 +29,7 @@ jobs:
       - name: Grant Permission
         run: chmod +x ./gradlew
 
-      - name: Build Booking API
+      - name: Build USER api
         run: ./gradlew build -x test
 
       - name: Set up Docker Buildx
